@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 mx-5 my-5">
+
+
+            <div class="example-container">
+                <div class="form-container">
+                    <form [formGroup]="LoginForm" (submit)="submit()">
+                        
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> E-mail</mat-label>
+                            <input matInput formControlName="email" required>
+                            <mat-error *ngIf="email.touched && email.invalid">
+                                <span *ngIf="email.errors.required">E-mail obligatoire.</span>
+                                <span *ngIf="email.errors.email">Format invalide.</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="mdp" required>
+                            <mat-error *ngIf="mdp.touched && mdp.invalid">
+                                <span *ngIf="mdp.errors.required">Mot de passe obligatoire</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+                        <button mat-raised-button color="primary" type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

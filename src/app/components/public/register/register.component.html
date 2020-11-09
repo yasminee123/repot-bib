@@ -1,0 +1,70 @@
+<app-nav></app-nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 mx-5 my-5">
+
+
+            <div class="example-container">
+                <div class="form-container">
+                    <form [formGroup]="RegisterForm" (submit)="submit()">
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> Nom</mat-label>
+                            <input matInput formControlName="nom" required>
+                            <mat-error *ngIf="nom.touched && nom.invalid">
+                                <span *ngIf="nom.errors.required">Nom obligatoire.</span>
+                                <span *ngIf="nom.errors.pattern">Format invalide.</span>
+                                <span *ngIf="nom.errors.minlength">Longeur du nom insuffisante.</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> Prénom</mat-label>
+                            <input matInput formControlName="prenom" required>
+                            <mat-error *ngIf="prenom.touched && prenom.invalid">
+                                <span *ngIf="prenom.errors.required">Prénom obligatoire.</span>
+                                <span *ngIf="prenom.errors.pattern">Format invalide.</span>
+                                <span *ngIf="prenom.errors.minlength">Longeur du prénom insuffisante.</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> E-mail</mat-label>
+                            <input matInput formControlName="email" required>
+                            <mat-error *ngIf="email.touched && email.invalid">
+                                <span *ngIf="email.errors.required">E-mail obligatoire.</span>
+                                <span *ngIf="email.errors.email">Format invalide.</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="mdp1" required>
+                            <mat-error *ngIf="mdp1.touched && mdp1.invalid">
+                                <span *ngIf="mdp1.errors.required">Mot de passe obligatoire</span>
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="mdp2" required>
+                            <mat-error *ngIf="mdp2.touched && mdp2.invalid || mdp2.valid">
+                                <span *ngIf="mdp2.errors.required">Mot de passe obligatoire</span>
+                                
+                            </mat-error>
+                        </mat-form-field> <br> <br>
+
+                        <button mat-raised-button color="primary" type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
