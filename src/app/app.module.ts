@@ -24,6 +24,7 @@ import { BooksMangComponent } from './components/private/books-mang/books-mang.c
 import { UsersMangComponent } from './components/private/users-mang/users-mang.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NavComponent } from './components/public/nav/nav.component';
+import{HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NavComponent } from './components/public/nav/nav.component';
     BooksMangComponent,
     UsersMangComponent,
     NavComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { NavComponent } from './components/public/nav/nav.component';
     MatSidenavModule,
     MatListModule,
     NgxSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
     
   ],
   providers: [],
